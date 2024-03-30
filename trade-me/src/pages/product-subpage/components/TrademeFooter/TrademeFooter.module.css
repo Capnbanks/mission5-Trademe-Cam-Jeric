@@ -1,0 +1,94 @@
+.trademeFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* background-color: #f0f0f0; */
+  padding: 20px;
+  
+}
+.tradeMeContainer{
+    /* border: 1px solid red; */
+    display: flex;
+    
+}
+.tradeMeLogo{
+    width: 10vw;
+    margin-left: 5vw;
+}
+.footerOptionsContainer{
+    display: flex;
+    margin-left: 50vw;
+}
+.footerOptions{
+    margin-left: 4vw;
+    font-family: "Nunito", sans-serif;
+}
+
+.footerHeaderContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5vw;
+    margin-left: 1vw;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.3); /* Faint horizontal line */
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3); /* Faint horizontal line */
+    padding-top: 2vh; /* Adjust spacing */
+    padding-bottom: 2vh; /* Adjust spacing */
+}
+.footerHeaders {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  margin-right: 5vw;
+  margin-left: 0vw;
+  font-weight: bold;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  color: black ;
+}
+
+
+.subHeaders {
+  list-style-type: none;
+  /* text-align: left; */
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Nunito", sans-serif;
+  color: black ;
+
+}
+
+.footerLegal {
+  text-align: center;
+  margin-top: 1vh;
+  display: flex;
+  margin-left: 5vw;
+  
+  /* border: 1px solid red; */
+}
+.bottomBarFooterContainer{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin-left: 10vw;
+    font-size: smaller;
+}
+.bottomBarFooter{
+    margin-left: 3.8vw;
+}
+.socialIcons{
+    margin-left: 13vw;
+    
+}
+.facebookLogo{
+    width: 1vw;
+ 
+}
+.twitterLogo{
+    width: 1.5vw;
+    margin-left: 1vw;
+}

@@ -1,0 +1,95 @@
+.header {
+    color: #888;
+    width: 100%; /* Make the header span the full width */
+    position: fixed; /* Fix the header at the top of the screen */
+    top: 0; /* Position the header at the top */
+    left: 0; /* Position the header at the left */
+    z-index: 1000; /* Set a high z-index to ensure the header is on top of other content */
+    border-bottom: 1px solid red;
+  }
+  
+  .logoLine {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* Add box shadow */
+    padding-bottom: 10px;
+  }
+  
+  .tradeMeLogo{
+    width: 10vw;
+    top: 1%;
+    margin-left: 4vw;
+  }
+  
+  .navLinks {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none; /* Remove the default bullet points */
+    background-color: whitesmoke;
+    color: grey;
+    margin-top: auto;
+    padding: 0.7vw;
+    margin-right: 1rem; /* Add margin to create space between the search bar and navigation links */
+  }
+  .search {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+    position: relative;
+     margin-left: 2vw;
+  }
+  .searchBox {
+    border-radius: 20px; /* Oval-shaped edges */
+    padding: 0.5vw; /* Adjust padding as needed */
+    padding-right: 20vw;
+   
+  }
+ 
+
+  .search input[type="text"] {
+    margin-left: -0.75vw;
+  }
+  
+  .search button {
+    position: absolute;
+    top: 1;
+    left: 0;
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+
+  }
+  .optionsBar{
+    margin-left: 20vw;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none; /* Remove the default bullet points */
+    font-weight: bold;
+    color: black;
+    padding: 0.7vw;
+    /* border: 1px solid red; */
+  }
+  .optionsBar li {
+    margin-left: 3vw; /* Add margin between each option */
+  }
+  .redBar{
+    margin-left: 4vw;
+    margin-right: 7vw;
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none; /* Remove the default bullet points */
+    color: #fff;
+    
+    /* border: 1px solid red; */
+    background-color:    #FF6347;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  }
+  .redBarOptions{
+    padding-left: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+  }
