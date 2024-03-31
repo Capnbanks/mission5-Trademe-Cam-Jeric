@@ -1,0 +1,59 @@
+.sideBar {
+  width: 20%; /* Adjust the width as needed */
+  height: 100vh; /* Set height to fill the entire viewport */
+  top: 0; /* Position from the top */
+  left: 0; /* Position from the left */
+
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+   border-right: 1px solid #ccc;/* Add a border for separation */
+  z-index: 100; /* Ensure the sidebar is on top of other content */
+}
+
+.categoryHeader {
+  /* border: 1px solid red; */
+  text-align: left;
+  margin-left: 5vw;
+  background-color: #f0f0f0; /* Background color for the sidebar */
+  margin-right: 0vw;
+  padding-left: 1vw;
+  padding-bottom: 0.5vh;
+  padding-top: 0.5vh;
+  font-size: larger;
+}
+.sideBarContainer{
+/* background-color: #ccc; */
+margin-left: 5vw;
+/* text-align: left; */
+border-top: 1px solid  #ccc ;
+margin-top: 2vh;
+display: flex;
+flex-direction: column;
+}
+.sideBarList {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .listItem {
+    display: flex;
+    align-items: center; /* Align items vertically */
+   
+    margin-bottom: 10px;
+  }
+  
+  .listedOptions {
+    flex-grow: 1; /* Allow the listedOptions to grow to fill available space */
+    word-wrap: break-word; /* Allow the word to wrap if it's too long */
+  }
+  
+  .NOofOptions {
+    display: flex; /* Use flexbox for NOofOptions */
+    align-items: center; /* Align items vertically */
+   
+  }
+  
+  .sidebarDropArrows {
+    margin-left: 5px; /* Adjust spacing between number and arrow */
+  }
