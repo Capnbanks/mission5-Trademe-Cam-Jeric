@@ -1,0 +1,155 @@
+.mainContainer {
+  /* border: 1px solid red; */
+  width: 70vw;
+}
+.topOptions {
+  display: flex;
+  list-style-type: none;
+  margin-top: 6vh;
+}
+.topListOption {
+  margin-left: 1vw;
+  /* border: 2px solid #ccc; */
+
+  font-weight: bold;
+}
+.topListOption:hover {
+  background-color: #ccc;
+  border-radius: 12%;
+}
+/* MainContentSearchDisplay.module.css */
+.noStyleButton {
+  border: none;
+  background: none;
+  padding: 0.5;
+  margin: 0;
+  cursor: pointer;
+  outline: none; /* Remove outline by default */
+}
+.noStyleButton:focus {
+  outline: none; /* Remove outline when button is clicked */
+}
+/* MainContentSearchDisplay.module.css */
+.highlightBackground {
+  background-color: #ccc; /* Choose your desired highlight color */
+  border-radius: 12%;
+}
+.search {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically */
+  position: relative;
+  margin-left: 2vw;
+}
+.searchBox {
+  border-radius: 20px; /* Oval-shaped edges */
+  padding: 0.5vw; /* Adjust padding as needed */
+  padding-right: 20vw;
+  font-family: "Nunito", sans-serif;
+}
+
+.search input[type="text"] {
+  margin-left: -0.75vw;
+}
+
+.search button {
+  position: absolute;
+  top: 1;
+  left: 0;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+}
+.searchLine {
+  border-top: 1px solid #ccc;
+  padding-top: 1vh;
+}
+.filterOptions {
+  display: flex;
+  font-size: medium;
+  font-family: "Nunito", sans-serif;
+}
+.sortBy {
+  margin-left: 15vw;
+  border: 1px solid #ccc;
+  padding: 1vh 1vw 1vh 1vw;
+}
+.filters {
+  margin-left: 2vw;
+  border: 1px solid #ccc;
+  padding: 1vh 1vw 1vh 1vw;
+}
+.filterIcons {
+  margin-left: 3vw;
+  margin-top: 3vh;
+}
+.gridview {
+  height: 3vh;
+}
+.hamburger {
+  margin-left: 2vw;
+  height: 3vh;
+}
+.imageDisplay {
+  /* border: 1px solid red; */
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 3vw;
+}
+.carouselList {
+  margin-left: 2vw;
+  border: px solid red;
+}
+.carouselContainer {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  gap: 10px; /* Adjust the spacing between ImageCarousel components */
+
+  flex-wrap: wrap;
+}
+
+.carouselContainer > div {
+  text-align: center; /* Center the text */
+}
+
+.carouselContainer > div p {
+  margin-top: 10px; /* Add some space between the carousel and text */
+}
+.itemName{
+    text-align: left;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+}
+.saleLocation{
+    
+    font-size: smaller;
+    text-align: left;
+}
+.itemNameSmaller{
+    text-align: left;
+    font-size: medium;
+    font-family: "Nunito", sans-serif;
+}
+.buyNow{
+    font-size: smaller;
+    font-weight: bold;
+    text-align: left;
+    font-family: "Nunito", sans-serif;
+}
+.itemCost{
+    font-size: medium;
+    font-weight: bold;
+}
+.currentBid{
+    margin-left: 5vw;
+    font-size: small;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px solid ;
+}
+.currentBidNum{
+    font-size: medium;
+    
+}
