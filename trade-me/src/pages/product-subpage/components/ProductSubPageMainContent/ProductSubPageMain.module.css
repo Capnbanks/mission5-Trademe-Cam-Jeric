@@ -1,0 +1,13 @@
+.banner {
+    width: 100vw; /* 100% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    
+    
+  }
+  
+  /* If you need to style the image further, you can use the .homeLivingHeadPic class */
+  .homeLivingHeadPic {
+    width: 100%; /* Make sure the image covers the whole width of its container */
+    height: auto; /* Maintain aspect ratio */
+    
+  }
