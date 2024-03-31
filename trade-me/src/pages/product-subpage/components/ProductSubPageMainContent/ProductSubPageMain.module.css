@@ -11,3 +11,6 @@
     height: auto; /* Maintain aspect ratio */
     
   }
+  .mainContent{
+    display: flex;
+  }
