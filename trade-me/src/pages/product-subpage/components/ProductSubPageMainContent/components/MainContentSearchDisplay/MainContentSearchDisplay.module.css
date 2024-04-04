@@ -2,6 +2,9 @@
   /* border: 1px solid red; */
   width: 70vw;
 }
+li{
+  list-style-type: none;
+}
 .topOptions {
   display: flex;
   list-style-type: none;
@@ -70,6 +73,36 @@
   font-size: medium;
   font-family: "Nunito", sans-serif;
 }
+
+.dropdownMenu {
+  position: absolute;
+  top: 50px; /* Adjust as needed */
+  right: 0;
+}
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  margin-right: 15vw;
+}
+
+/* Additional styles for dropdown options */
+.dropdownContent p {
+  padding: 8px 12px;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Additional styles for when hovering over dropdown options */
+.dropdownContent p:hover {
+  background-color: #ddd;
+}
+
 .sortBy {
   margin-left: 15vw;
   border: 1px solid #ccc;
@@ -84,7 +117,12 @@
   margin-left: 3vw;
   margin-top: 3vh;
 }
-.gridview {
+.clearAll{
+  color: blue;
+  text-decoration: underline;
+}
+
+.gridView {
   height: 3vh;
 }
 .hamburger {
@@ -117,6 +155,27 @@
 .carouselContainer > div p {
   margin-top: 10px; /* Add some space between the carousel and text */
 }
+.imageDisplayContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.listingImage{
+  width: 20vw;
+  height: 30vh;
+  margin-left: 2vw;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 12px;
+}
+.listingImage:hover{
+border: 2px solid black;
+/*transform: rotate(45deg);  Rotate the image by 45 degrees */
+}
+
+.textContentListings{
+  margin-left: 2vw;
+}
 .itemName{
     text-align: left;
     font-weight: bold;
@@ -131,6 +190,9 @@
     text-align: left;
     font-size: medium;
     font-family: "Nunito", sans-serif;
+}
+.priceLine{
+  display: flex;
 }
 .buyNow{
     font-size: smaller;

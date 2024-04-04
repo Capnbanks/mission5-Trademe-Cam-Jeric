@@ -6,7 +6,7 @@ import ProductDescription from './pages/product-description/ProductDescription'
 import Home from './pages/home/Home'
 
 function App() {
-  
+  // Add drop down for sort by and sidebar
 
   return (
     <> <BrowserRouter>
