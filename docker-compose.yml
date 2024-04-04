@@ -18,18 +18,19 @@ services:
       - ./api:/app
       - /app/node_modules
     environment:
-      - MONGO_URL=mongodb://mongo:27017/mydb
-  client:
-    build: ./client
-    container_name: client_c
+      # - MONGO_URL=mongodb://mongo:27017/mydb
+      - MONGO_URL=mongodb://mongo:27017/trademelistings
+  trademe:
+    build: ./trade-me
+    container_name: trade-me_c
     ports:
-      - "3000:3000"
+      - "5173:5173"
     stdin_open: true
     tty: true
     depends_on:
       - api
     volumes:
-      - ./client:/app
-      - /client/node_modules
+      - ./trade-me:/app
+      - /app/node_modules
 volumes:
   mongo-data:

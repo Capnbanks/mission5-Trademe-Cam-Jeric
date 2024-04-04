@@ -15,7 +15,13 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* Add box shadow */
     padding-bottom: 10px;
   }
-  
+  .topHeaderBar:hover{
+    background-color: #888;
+    border-radius: 12px;
+    color: white;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+  }
   .tradeMeLogo{
     width: 10vw;
     top: 1%;
@@ -72,6 +78,11 @@
   }
   .optionsBar li {
     margin-left: 3vw; /* Add margin between each option */
+  }
+  .headerIcons:hover{
+    background-color: #888;
+    border-radius: 12px;
+
   }
   .redBar{
     margin-left: 4vw;

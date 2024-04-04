@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import styles from "./MainContentSearchDisplay.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +11,7 @@ import property1Default from './Property 1=Default.png';
 import property1Variant2 from './Property 1=Variant2.png'
 import property1Variant3 from './Property 1=Variant3.png'
 import ImageCarousel from './ImageCarousel/ImageCarousel'
+import axios from 'axios';
 
 export default function MainContentSearchDisplay() {
   const [selectedButton, setSelectedButton] = useState(null);
@@ -26,6 +27,45 @@ export default function MainContentSearchDisplay() {
   ]; //Create a const images for each image when you get all of the photos
   //then can change the call for each one below to do them all,
   //Could do it in component folder to be clean
+
+
+
+//--------fetching mongo info on listings-----------------------------------------------------//
+// const [listings, setListings] = useState(null);
+
+//   useEffect(() => {
+//     axios.get("http://localhost:4000/api/listings").then((res) => {
+//       console.log(res?.data);
+//       setListings(res?.data?.data);
+//     });
+//   }, []);
+
+//-----------------Docker attempt-------------------------------------------------------------//
+const [listings, setListings] = useState(null);
+
+useEffect(() => {
+  axios.get("http://localhost:4000/api/listings")
+    .then((res) => {
+      console.log(res?.data);
+      setListings(res?.data?.data);
+    })
+    .catch((error) => {
+      console.error('Error fetching listings:', error);
+    });
+}, []);
+//------------------Filter, sort by click button----------------//
+
+  const [sortByDropdownVisible, setSortByDropdownVisible] = useState(false);
+  const [filtersDropdownVisible, setFiltersDropdownVisible] = useState(false);
+
+  const toggleSortByDropdown = () => {
+    setSortByDropdownVisible(!sortByDropdownVisible);
+  };
+
+  const toggleFiltersDropdown = () => {
+    setFiltersDropdownVisible(!filtersDropdownVisible);
+  };
+
 
 
   return (
@@ -75,8 +115,8 @@ export default function MainContentSearchDisplay() {
         </li>
       </ul>
 
-      {/*----------------- Search Bar Line */}
-      <div className={styles.searchLine}>
+      {/*----------------- Search Bar Line ----------------*/}
+      {/* <div className={styles.searchLine}>
         <div className={styles.search}>
           <button>
             <FontAwesomeIcon icon={faSearch} />
@@ -94,15 +134,107 @@ export default function MainContentSearchDisplay() {
               <FontAwesomeIcon icon={faFilter} /> Filters(2)
             </p>
             <div className={styles.filterIcons}>
-            <FontAwesomeIcon className={styles.gridview} icon={faTh}/>
+            <FontAwesomeIcon className={styles.gridView} icon={faTh}/>
             <FontAwesomeIcon className={styles.hamburger} icon={faBars} />
             </div>
           </div>
         </div>
+      </div> */}
+
+<div className={styles.searchLine}>
+      <div className={styles.search}>
+        <button>
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
+        <input
+          className={styles.searchBox}
+          type="text"
+          placeholder="      Search all of Trade Me"
+        />
+        <div className={styles.filterOptions}>
+          <p className={styles.sortBy} onClick={toggleSortByDropdown}>
+            <FontAwesomeIcon icon={faSort} /> Sort by
+          </p>
+          {sortByDropdownVisible && (
+            <div className={styles.dropdownMenu}>
+              <div className={styles.dropdownContent}>
+                {/* Your dropdown options for Sort by */}
+                <p>Featured first</p>
+                <p>Most viewed</p>
+                <p>Lowest price</p>
+                <p>Highest price</p>
+                <p>Latest listings</p>
+                <p>Lowest buy now</p>
+                <p>Highest buy now</p>
+                <p>Most bids</p>
+                <p>Closing soon</p>
+                <p>Title</p>
+                <p>Largest discount</p>
+              </div>
+            </div>
+          )}
+          <p className={styles.filters} onClick={toggleFiltersDropdown}>
+            <FontAwesomeIcon icon={faFilter} /> Filters(2)
+          </p>
+          {filtersDropdownVisible && (
+            <div className={styles.dropdownMenu}>
+              <div className={styles.dropdownContent}>
+                {/* Your dropdown options for Filters */}
+                <p>Location</p>
+                <p>New & used</p>
+                <p>Shipping</p>
+                <p>Price</p>
+                <p>Payment</p>
+                <p>Clearance</p>
+                <p className={styles.clearAll}>Clear all</p>
+              </div>
+            </div>
+          )}
+          <div className={styles.filterIcons}>
+            <FontAwesomeIcon className={styles.gridView} icon={faTh} />
+            <FontAwesomeIcon className={styles.hamburger} icon={faBars} />
+          </div>
+        </div>
       </div>
+    </div>
+
+
+
+      {/*------------- display database trademe stuff -----------------*/}
+
+      <div className="App">
+    {listings ? (
+      <ul className={styles.imageDisplayContainer}>
+        {listings?.map((listing, index) => (
+          
+          <li key={index}>
+<img className={styles.listingImage} src={listing.imageUrl} alt="Listing" /> 
+              <div className={styles.textContentListings}>
+            <h2 className={styles.itemName}>{listing.title}</h2>
+            <p className={styles.saleLocation}><FontAwesomeIcon icon={faMapMarkerAlt} /> {listing.location}</p>
+            <p className={styles.itemNameSmaller}>{listing.title}</p>
+            <div className={styles.priceLine}>
+            <p className={styles.buyNow}>Buy now ${listing.price}</p>
+            <p className={styles.currentBid}> Current bid ${listing.currentBid}</p>
+          </div>
+          </div>
+          </li>
+        ))}
+      </ul>
+
+      
+    ) : (
+      <p>Loading...</p>
+    )}
+  </div>
+
+ 
+
+
+
 
       {/* -------------Image carousel below -----------------*/}
-      <div className={styles.imageDisplay}>
+      {/* <div className={styles.imageDisplay}>
       <div className={styles.carouselContainer}>
       <div>
       <ImageCarousel images={images} />
@@ -112,6 +244,7 @@ export default function MainContentSearchDisplay() {
       <p className={styles.buyNow}>Buy now <span className={styles.itemCost}> $3,100</span>
        <span className={styles.currentBid}>Current bid <span className={styles.currentBidNum}> $1,500</span></span></p>
     </div>
+    
       <div>
       <ImageCarousel images={images} />
       <p className={styles.itemName}>Lounge Suite</p>
@@ -179,7 +312,7 @@ export default function MainContentSearchDisplay() {
      
      </div>
            
-      </div>
+      </div> */}
     </div>
   );
 }

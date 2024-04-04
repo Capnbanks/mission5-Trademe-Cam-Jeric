@@ -17,12 +17,12 @@ const TrademeHeader = () => {
       <nav>
         <ul className={styles.navLinks}>
           {/* Your navigation links */}
-          <li>Trade Me</li>
-          <li>Trade Me Insurance</li>
-          <li>Holiday Houses</li>
-          <li>FindSomeone</li>
-          <li>MotorWeb</li>
-          <li>homes.co.nz</li>
+          <li className={styles.topHeaderBar}>Trade Me</li>
+          <li className={styles.topHeaderBar}>Trade Me Insurance</li>
+          <li className={styles.topHeaderBar}>Holiday Houses</li>
+          <li className={styles.topHeaderBar}>FindSomeone</li>
+          <li className={styles.topHeaderBar}>MotorWeb</li>
+          <li className={styles.topHeaderBar}>homes.co.nz</li>
         </ul>
         <div className={styles.logoLine}>
           <div className={styles.trademe}>
@@ -38,11 +38,11 @@ const TrademeHeader = () => {
             
           </div>
           <ul className={styles.optionsBar}>
-            <li> <FontAwesomeIcon icon={faShoppingCart} /> Cart</li>
-            <li> <FontAwesomeIcon icon={faCoins} /> My bids</li>
-            <li> <FontAwesomeIcon icon={faHeart} /> Saves</li>
-            <li> <FontAwesomeIcon icon={faEdit} /> List item</li>
-            <li> <FontAwesomeIcon icon={faUser} /> Login</li>
+            <li className={styles.headerIcons} > <FontAwesomeIcon icon={faShoppingCart} /> Cart</li>
+            <li className={styles.headerIcons}> <FontAwesomeIcon icon={faCoins} /> My bids</li>
+            <li className={styles.headerIcons}> <FontAwesomeIcon icon={faHeart} /> Saves</li>
+            <li className={styles.headerIcons}> <FontAwesomeIcon icon={faEdit} /> List item</li>
+            <li className={styles.headerIcons}> <FontAwesomeIcon icon={faUser} /> Login</li>
           </ul>
         </div>
       </nav>

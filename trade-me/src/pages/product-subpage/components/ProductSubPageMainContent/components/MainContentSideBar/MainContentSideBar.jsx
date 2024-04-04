@@ -5,6 +5,14 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function MainContentSideBar() {
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+ 
+
+
   return (
     <div className={styles.sideBar}>
       {/*------------------------------ Category display box----------------------------------- */}
@@ -189,18 +197,40 @@ export default function MainContentSideBar() {
               />
             </div>
           </li>
-          <li className={styles.listItem}>
-            <div className={styles.listedOptions}>
-              Lounge, dining & hall
-            </div>
-            <div className={styles.NOofOptions}>
-              (18,937)
-              <FontAwesomeIcon
-                icon={faCaretDown}
-                className={styles.sidebarDropArrows}
-              />
-            </div>
-          </li>
+       
+              <li className={styles.listItem}>
+      <div className={styles.listedOptions}>
+        Lounge, dining & hall
+      </div>
+      <div className={styles.NOofOptions}>
+        (18,937)
+        <FontAwesomeIcon
+          icon={faCaretDown}
+          className={styles.sidebarDropArrows}
+          onClick={toggleDropdown}
+        />
+      </div>
+      {isOpen && (
+        <div className={styles.dropdownContent}>
+        
+          <a >All products</a>
+          <a >Beanbags</a>
+          <a >Cabinets & bookshelves</a>
+          <a >Chairs</a>
+          <a >Desks</a>
+          <a >Dining suites</a>
+          <a >Entertainment units</a>
+          <a >Lounge suites</a>
+          <a >Ottomans & footstools</a>
+          <a >Rugs & carpets</a>
+          <a >Tables</a>
+          <a >Other</a>
+        </div>
+      )}
+    </li>
+
+
+
           <li className={styles.listItem}>
             <div className={styles.listedOptions}>
               Luggage & travel accessories
